@@ -44,7 +44,7 @@ public class Person {
     public String getgender(){
         return gender;
     }
-    public String sethobby(String hobby){
+    public void sethobby(String hobby){
         this.hobby=hobby;
     }
     public String gethobby(){

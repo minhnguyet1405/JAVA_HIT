@@ -19,8 +19,10 @@ public class Guns {
     public void Shoot(int x){
         if(ammoNumber-x>=0){
             ammoNumber-=x;
-        }else
+        }else{
             System.out.println("Het dan");
+            ammoNumber=0;
+        }
     }
     public Guns(){
         weaponName="";
