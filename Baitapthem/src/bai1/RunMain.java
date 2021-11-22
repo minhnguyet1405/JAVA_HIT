@@ -102,19 +102,24 @@ public class RunMain {
         }
     }
     public static void Change(ArrayList<Teacher> teacher){
+        ArrayList<Teacher>tmp=new ArrayList<>();
         for(int i=0;i<teacher.size();i++){
-            for(int j=i+1;j<teacher.size();j++){
-                if(teacher.get(i).getNumberOfTeachingHours()<teacher.get(j).getNumberOfTeachingHours()){
-                    Teacher s=teacher.get(i);
-                    teacher.set(i,teacher.get(j));
-                    teacher.set(j, s);
-                }
+            if(teacher.get(i).getNumberOfTeachingHours()==0){
+                tmp.add(teacher.get(i));
+                
             }
         }
-        System.out.println("----------------LIST TEACHER AFTER CHANGE-------------");
+//        System.out.println("AFTER CHANGE");
+//        for(int i=0;i<tmp.size();i++){
+//            tmp.get(i).output();
+//        }
         for(int i=0;i<teacher.size();i++){
-            System.out.println("-------------------------------");
-            System.out.println("Teacher "+(i+1));
+            if(teacher.get(i).getNumberOfTeachingHours()==0)
+                teacher.remove(i);
+        }
+        teacher.addAll(tmp);
+        System.out.println("AFTER CHANGE");
+        for(int i=0;i<tmp.size();i++){
             teacher.get(i).output();
         }
     }
