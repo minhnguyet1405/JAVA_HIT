@@ -17,12 +17,21 @@ public class RunMain {
     
         System.out.println("Nhap chuoi: ");
         String s=sc.nextLine();
-        int dem=0;
+        int dem=0,sum=0,t=1;
         for(int i=0;i<s.length();i++){
-            if(s.charAt(i)>='0' && s.charAt(i)<='9')
+            if(s.charAt(i)>='0' && s.charAt(i)<='9'){
+                sum+=s.charAt(i)-'0';
                 dem++;
+            }
         }
         System.out.println("ky tu so la : "+ dem);
+        
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)>='0' && s.charAt(i)<='9')
+                if(sum%(s.charAt(i)-'0')==0)
+                t*=s.charAt(i)-'0';
+        }
+        System.out.println("Tich : "+t);
     }
     
     
