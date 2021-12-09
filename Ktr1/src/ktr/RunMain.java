@@ -39,6 +39,15 @@ public class RunMain {
         }
         int choose;
         do {
+            System.out.println("------------Menu----------------");
+            System.out.println("| 1.Add a book                  |");
+            System.out.println("| 2.Edit book by id             |");
+            System.out.println("| 3.Delete book by id           |");
+            System.out.println("| 4.Sort books by name          |");
+            System.out.println("| 5.Sort books by price         |");
+            System.out.println("| 6.Show all books              |");
+            System.out.println("| 7.Exit                        |");
+            System.out.println("--------------------------------");
             System.out.println("Enter your choose : ");
             choose = sc.nextInt();
             switch (choose) {
@@ -46,10 +55,10 @@ public class RunMain {
                     Add(books);
                     break;
                 case 2:
-                    EditByID(books, 1);
+                    EditByID(books);
                     break;
                 case 3:
-                    DeleteById(books, 1);
+                    DeleteById(books);
                     break;
                 case 4:
                     Sortbyname(books);
@@ -62,7 +71,7 @@ public class RunMain {
                     break;
                 case 7:
                     System.out.println("exit");
-                    break;
+                    System.exit(0);
                 default:
                     System.out.println("Lua chon khong hop le ");
                     break;
@@ -93,7 +102,7 @@ public class RunMain {
 
     }
 
-    public static void EditByID(ArrayList<Book> books, int id) {
+    public static void EditByID(ArrayList<Book> books) {
         Scanner sc = new Scanner(System.in);
         Book s = new Book();
         System.out.println("Enter id : ");
@@ -104,6 +113,8 @@ public class RunMain {
         s.setPublisher(sc.nextLine());
         System.out.println("Enter price: ");
         s.setPrice(sc.nextLong());
+        System.out.println("Enter new id : ");
+        int id=sc.nextInt();
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getId() == id) {
                 books.set(i, s);
@@ -111,7 +122,10 @@ public class RunMain {
         }
     }
 
-    public static void DeleteById(ArrayList<Book> books, int id) {
+    public static void DeleteById(ArrayList<Book> books) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter new id : ");
+        int id=sc.nextInt();
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getId() == id) {
                 books.remove(i);
