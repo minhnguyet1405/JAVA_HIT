@@ -11,6 +11,7 @@ public class CanBo extends NhanSu {
     private String xepLoai;
     private double luong;
 
+
     public CanBo(int maNs, String hoDem, String ten, int namSinh, String gioiTinh, Phong phong, String chucVu, double heSoLuong, String xepLoai) {
         super(maNs, hoDem, ten, namSinh, gioiTinh);
 
@@ -39,22 +40,24 @@ public class CanBo extends NhanSu {
 
     @Override
     public void output() {
-        System.out.println("Ma nhan su : "+maNs);
-        System.out.println("Ho dem : "+hoDem);
-        System.out.println("Ten    : "+ten);
-        System.out.println("Nam sinh : "+namSinh);
-        System.out.println("Gioi tinh : "+gioiTinh);
-        System.out.println("Phong : "+phong.getTenPhong());
-        System.out.println("Truong phong : "+phong.getTruongPhong());
-        System.out.println("Chuc vu : "+chucVu);
-        System.out.println("He so luong : "+heSoLuong);
-        System.out.println("Xep loai : "+xepLoai);
+//        System.out.println("Ma nhan su : "+maNs);
+//        System.out.println("Ho dem : "+hoDem);
+//        System.out.println("Ten    : "+ten);
+//        System.out.println("Nam sinh : "+namSinh);
+//        System.out.println("Gioi tinh : "+gioiTinh);
+//        System.out.println("Phong : "+phong.getTenPhong());
+//        System.out.println("Truong phong : "+phong.getTruongPhong());
+//        System.out.println("Chuc vu : "+chucVu);
+//        System.out.println("He so luong : "+heSoLuong);
+//        System.out.println("Xep loai : "+xepLoai);
 //        System.out.println("Luong : "+luong);
+        System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n",maNs,hoDem,ten,
+                namSinh,gioiTinh,phong.getTenPhong(),phong.getTruongPhong(),chucVu,heSoLuong,xepLoai);
 
     }
 
     @Override
-    public void tinhLuong() {
+    public double tinhLuong() {
         if(xepLoai=="A"){
             luong=heSoLuong*1150000+1000000;
         }else if(xepLoai=="B"){
@@ -64,6 +67,8 @@ public class CanBo extends NhanSu {
         }else{
             luong=heSoLuong*1150000-1000000;
         }
+        return luong;
     }
+
 }
 

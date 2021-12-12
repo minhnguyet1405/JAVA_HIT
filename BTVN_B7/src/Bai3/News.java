@@ -68,7 +68,7 @@ public class News implements INews {
 
     public void input(){
         for(int i=0;i<3;i++){
-            
+
             rateList[i]=sc.nextInt();
         }
     }

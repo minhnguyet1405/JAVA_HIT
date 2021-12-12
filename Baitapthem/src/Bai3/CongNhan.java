@@ -35,21 +35,23 @@ public class CongNhan extends NhanSu {
 
     @Override
     public void output() {
-        System.out.println("Ma nhan su : "+maNs);
-        System.out.println("Ho dem : "+hoDem);
-        System.out.println("Ten    : "+ten);
-        System.out.println("Nam sinh : "+namSinh);
-        System.out.println("Gioi tinh : "+gioiTinh);
-        System.out.println("Ten xuong : "+xuongSX.getTenXuong());
-        System.out.println("Ten quan doc : "+xuongSX.getQuanDoc());
-        System.out.println("So cong nhan : "+xuongSX.getSoCongNhan());
-        System.out.println("Cong viec : "+congViec);
-        System.out.println("So ngay cong : "+soNgayCong);
+//        System.out.println("Ma nhan su : "+maNs);
+//        System.out.println("Ho dem : "+hoDem);
+//        System.out.println("Ten    : "+ten);
+//        System.out.println("Nam sinh : "+namSinh);
+//        System.out.println("Gioi tinh : "+gioiTinh);
+//        System.out.println("Ten xuong : "+xuongSX.getTenXuong());
+//        System.out.println("Ten quan doc : "+xuongSX.getQuanDoc());
+//        System.out.println("So cong nhan : "+xuongSX.getSoCongNhan());
+//        System.out.println("Cong viec : "+congViec);
+//        System.out.println("So ngay cong : "+soNgayCong);
 //        System.out.println("Luogn : "+luong);
+        System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s\n",maNs,hoDem,ten,
+                namSinh,gioiTinh,xuongSX.getTenXuong(),xuongSX.getQuanDoc(),xuongSX.getSoCongNhan(),congViec,soNgayCong);
     }
 
     @Override
-    public void tinhLuong() {
+    public double tinhLuong() {
         if(soNgayCong>=23){
             luong=soNgayCong*250000+500000;
         }else if(soNgayCong>=20){
@@ -59,5 +61,6 @@ public class CongNhan extends NhanSu {
         }else{
             luong=soNgayCong*250000-200000;
         }
+        return luong;
     }
 }

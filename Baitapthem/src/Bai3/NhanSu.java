@@ -6,6 +6,9 @@ public abstract class NhanSu {
     protected String ten;
     protected int namSinh;
 
+    public NhanSu(){
+
+    }
     public NhanSu(int maNs, String hoDem, String ten, int namSinh, String gioiTinh) {
         this.maNs = maNs;
         this.hoDem = hoDem;
@@ -18,5 +21,5 @@ public abstract class NhanSu {
 
     public abstract void input();
     public  abstract void output();
-    public abstract void tinhLuong();
+    public abstract double tinhLuong();
 }
