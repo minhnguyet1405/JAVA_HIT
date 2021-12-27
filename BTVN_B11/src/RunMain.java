@@ -183,7 +183,7 @@ public class RunMain {
         System.out.println("Enter password: ");
         String password=sc.nextLine();
             for(int i=0;i<accountList.size();i++){
-                if(accountList.get(i).getUserName().compareTo(password) == 0 && accountList.get(i).getPassword().compareTo(password)==0)
+                if(accountList.get(i).getUserName().compareTo(userName) == 0 && accountList.get(i).getPassword().compareTo(password)==0)
                 {
                     System.out.println("1. ShowInfo");
                     System.out.println("2. ChangePassword");
