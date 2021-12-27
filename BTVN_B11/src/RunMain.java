@@ -145,6 +145,14 @@ public class RunMain {
         bufferedWriter.close();
         fileWriter.close();
         Scanner scanner =new Scanner(Paths.get("ACC.DAT"));
+        List<Account> accountList=new ArrayList<>();
+        while (scanner.hasNext()){
+            String s=scanner.nextLine();
+            String []a=s.split("\\|");
+            accountList.add(new Account(Integer.parseInt(a[0]),a[1],a[2],a[3],a[4],a[5],a[6]));
+
+        }
+        System.out.println(accountList);
         scanner.close();
 
 
@@ -191,7 +199,7 @@ public class RunMain {
                     int choose =sc.nextInt();
                     switch (choose){
                         case 1:
-                            accountList.get(i).toString();
+                            System.out.println(accountList.get(i).toString());
                             break;
                         case 2:
                             System.out.println("Enter new password : ");
