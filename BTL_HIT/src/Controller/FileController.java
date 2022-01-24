@@ -47,11 +47,7 @@ public class FileController {
         printWriter.println(customer.getIdCus()+"|"+customer.getNameCus()+"|"+customer.getAgeCus()+"|"+customer.getGenderCus()+"|"+customer.getAddressCus()+"|"+customer.getPhoneCus());
         closeFileAfterWrite(fileName);
     }
-    public void writeEmployeeToFile(Employee employee,String fileName){
-        openFleToWrite(fileName);
-        printWriter.println(employee.getIdEmploy()+"|"+employee.getNameEmploy()+"|"+employee.getAgeEmploy()+"|"+employee.getGenderEmploy()+"|"+employee.getAddressEmploy()+"|"+employee.getPhoneEmploy());
-        closeFileAfterWrite(fileName);
-    }
+
     public void writeProductToFile(Product product,String fileName){
         openFleToWrite(fileName);
         printWriter.println(product.getIdPro()+"|"+product.getNameProduct()+"|" +
@@ -129,24 +125,7 @@ public class FileController {
         return account;
     }
 
-    public ArrayList<Employee> readEmployeeFromFile(String fileName){
-        openFileToRead(fileName);
-        ArrayList<Employee> employees=new ArrayList<>();
-        while (scanner.hasNextLine()){
-            String data=scanner.nextLine();
-            Employee employee=createEmployeeFromData(data);
-        }
-        closeFileToRead(fileName);
-        return employees;
-    }
-
-    public Employee createEmployeeFromData(String data) {
-
-        String[] datas=data.split("\\|");
-
-        Employee employee =new Employee(Integer.parseInt(datas[0]),datas[1],datas[2],datas[3],datas[4],datas[5]);
-        return employee;
-    }
+    
 
 
 
