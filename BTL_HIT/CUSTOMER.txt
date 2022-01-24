@@ -1,0 +1,3 @@
+9|Bui Quang Anh|7|nam|Hung Yen|0123456789
+1|Trieu Vi|19|nu|Khoai Chau|0972208496
+2|Minh Nguyet|15|nu|Da Trach|0133445566
